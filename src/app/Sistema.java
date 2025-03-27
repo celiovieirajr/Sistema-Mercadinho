@@ -1,13 +1,9 @@
 package app;
 
-import view.Menu;
-
-import java.awt.*;
+import view.MenuPrincipal;
 
 public class Sistema {
     public static void main(String[] args) {
-        Menu menu = new Menu();
-
-        menu.menuOpcoes();
+        new MenuPrincipal().exibirMenu();
     }
 }
