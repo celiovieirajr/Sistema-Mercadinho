@@ -9,7 +9,7 @@ public class MenuException extends RuntimeException {
         try {
             return Integer.parseInt(entrada);
         } catch (NumberFormatException e) {
-            throw new MenuException("Opção inválida! Digite um número valido.");
+            throw new MenuException("Opção inválida! Digite um número válido.");
         }
     }
 }
