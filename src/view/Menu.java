@@ -11,7 +11,7 @@ public abstract class Menu implements IMenu {
         return MenuException.validarNumero(entrada.nextLine());
     }
 
-    protected void executarLoop(String titulo) {
+    protected void iniciarMenu(String titulo) {
         System.out.println("\n### " + titulo + " ###");
         while (true) {
             mostrarOpcoes();

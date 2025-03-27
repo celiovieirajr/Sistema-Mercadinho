@@ -3,7 +3,7 @@ package view;
 public class MenuClientes extends Menu {
     @Override
     public void exibirMenu() {
-        executarLoop("Menu de Clientes");
+        iniciarMenu("Menu de Clientes");
     }
 
     @Override
