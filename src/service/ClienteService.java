@@ -1,7 +1,6 @@
 package service;
 
 import model.Cliente;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +12,7 @@ public class ClienteService {
         clientes.add(cliente);
         System.out.println("Cliente cadastrado com sucesso! " + cliente.getNome());
     }
+
 
     public void listarClientes() {
         if (clientes.isEmpty()) {
