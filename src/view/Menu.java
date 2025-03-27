@@ -41,7 +41,7 @@ public class Menu {
 
     private void processarSelecao(int selecao) {
         switch (selecao) {
-            case 1 -> System.out.println("Criar menu de clientes.");
+            case 1 -> new MenuClientes().menuSelecaoClientes();
             case 2 -> System.out.println("Criar menu de produtos.");
             case 3 -> System.out.println("Criar menu de vendas.");
             case 4 -> System.out.println("Criar menu de recebimentos.");
