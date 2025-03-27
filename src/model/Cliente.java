@@ -7,6 +7,11 @@ public class Cliente {
     private Date dataNascimento;
     private long documento;
 
+    public Cliente(String nome, Date dataNascimento, long documento) {
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+        this.documento = documento;
+    }
 
     public String getNome() {
         return nome;
@@ -31,6 +36,4 @@ public class Cliente {
     public void setDocumento(long documento) {
         this.documento = documento;
     }
-
-
 }

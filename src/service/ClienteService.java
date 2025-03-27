@@ -3,28 +3,27 @@ package service;
 import model.Cliente;
 import java.util.ArrayList;
 import java.util.List;
+//import java.util.Optional;
 
 public class ClienteService {
+    private final List<Cliente> clientes = new ArrayList<>();
 
-    private List<Cliente> clientes = new ArrayList<>();
-
-    public void cadastrarClientes(Cliente cliente) {
+    public void cadastrarCliente(Cliente cliente) {
         clientes.add(cliente);
-        System.out.println("Cliente cadastrado com sucesso! " + cliente.getNome());
+        System.out.println("Cliente cadastrado com sucesso: " + cliente.getNome());
     }
-
 
     public void listarClientes() {
         if (clientes.isEmpty()) {
-            System.out.println("Nenhum cadastro de clientes encontrado!");
+            System.out.println("Nenhum cliente cadastrado.");
             return;
-        } for (Cliente cliente : clientes) {
-            System.out.println("Nome: " + cliente.getNome() + "\n" +
-                                "Documento: " + cliente.getDocumento() + "\n" +
-                                "Data de Nascimento: " + cliente.getDataNascimento() + "\n");
+        }
+        System.out.println("*** Lista de Clientes ***");
+        for (Cliente cliente : clientes) {
+            System.out.println("Nome: " + cliente.getNome());
+            System.out.println("Documento: " + cliente.getDocumento());
+            System.out.println("Data de Nascimento: " + cliente.getDataNascimento());
+            System.out.println("-------------------------");
         }
     }
-
-
-
 }

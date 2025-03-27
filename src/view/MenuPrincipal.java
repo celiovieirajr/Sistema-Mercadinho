@@ -22,6 +22,7 @@ public class MenuPrincipal extends Menu {
             case 2 -> System.out.println("Criar menu de produtos.");
             case 3 -> System.out.println("Criar menu de vendas.");
             case 4 -> System.out.println("Criar menu de recebimentos.");
+            case 0 -> System.out.println("Saindo do sistema...");
             default -> System.out.println("Opção inválida! Tente novamente.");
         }
     }

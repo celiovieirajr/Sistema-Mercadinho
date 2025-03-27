@@ -12,7 +12,7 @@ public abstract class Menu implements IMenu {
     }
 
     protected void iniciarMenu(String titulo) {
-        System.out.println("\n### " + titulo + " ###");
+        System.out.println("\n*** " + titulo + " ***");
         while (true) {
             mostrarOpcoes();
             try {
