@@ -7,6 +7,7 @@ import service.ClienteService;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 public class MenuClientes extends Menu {
@@ -31,11 +32,12 @@ public class MenuClientes extends Menu {
     protected void processarOpcao(int opcao) {
         switch (opcao) {
             case 1 -> incluirCliente();
-            case 2 -> clienteService.listarClientes();
-            case 3 -> System.out.println("deletarCliente()");
+            case 2 -> listarClientes();
+            case 3 -> deletaCliente();
             default -> System.out.println("Opção inválida! Tente novamente.");
         }
     }
+
 
     private void incluirCliente() {
         System.out.print("Nome: ");
@@ -54,7 +56,29 @@ public class MenuClientes extends Menu {
         }
 
         Cliente cliente = new Cliente(nome, dataNascimento, documento);
-        clienteService.cadastrarCliente(cliente);
+        clienteService.cadastrarClienteService(cliente);
+    }
+
+
+    private void listarClientes() {
+        List<String> clientes = clienteService.listarClientesService();
+
+        for (String cliente : clientes) {
+            System.out.println(cliente);
+        }
+    }
+
+
+    private void deletaCliente() {
+        System.out.println("Digite o nome de quem deseja deletar: ");
+        String nomeCliente = entrada.nextLine();
+
+        try {
+            clienteService.deletarClientesService(nomeCliente);
+            System.out.println("Cliente "  +  nomeCliente +" deletado com sucesso!");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
 

@@ -1,29 +1,47 @@
 package service;
 
 import model.Cliente;
+
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-//import java.util.Optional;
+
 
 public class ClienteService {
     private final List<Cliente> clientes = new ArrayList<>();
 
-    public void cadastrarCliente(Cliente cliente) {
+
+    public void cadastrarClienteService(Cliente cliente) {
         clientes.add(cliente);
-        System.out.println("Cliente cadastrado com sucesso: " + cliente.getNome());
     }
 
-    public void listarClientes() {
-        if (clientes.isEmpty()) {
-            System.out.println("Nenhum cliente cadastrado.");
-            return;
-        }
-        System.out.println("*** Lista de Clientes ***");
+
+    public List<String> listarClientesService() {
+        List<String> dadosClientes = new ArrayList<>();
         for (Cliente cliente : clientes) {
-            System.out.println("Nome: " + cliente.getNome());
-            System.out.println("Documento: " + cliente.getDocumento());
-            System.out.println("Data de Nascimento: " + cliente.getDataNascimento());
-            System.out.println("-------------------------");
+                    dadosClientes.add(cliente.getNome()
+                    + " - "
+                    + cliente.getDocumento()
+                    + " - "
+                    + cliente.getDataNascimento());
         }
+        return dadosClientes;
+    }
+
+
+    public Cliente consultarClientePorNomeService(String nomeCliente) {
+        for (Cliente consultaCliente : clientes) {
+            if (consultaCliente.getNome().equalsIgnoreCase(nomeCliente)) {
+                return consultaCliente;
+            }
+        }
+        return null;
+    }
+
+
+    public void deletarClientesService(String nomeCliente) {
+        Cliente clienteEncontrado = consultarClientePorNomeService(nomeCliente);
+        if (clienteEncontrado != null)
+            clientes.remove(clienteEncontrado);
     }
 }

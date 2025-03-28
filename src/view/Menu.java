@@ -1,6 +1,7 @@
 package view;
 
 import exception.MenuException;
+
 import java.util.Scanner;
 
 public abstract class Menu implements IMenu {
@@ -12,7 +13,7 @@ public abstract class Menu implements IMenu {
     }
 
     protected void iniciarMenu(String titulo) {
-        System.out.println("\n*** " + titulo + " ***");
+        System.out.println("\n*** " + titulo + " ***"); //
         while (true) {
             mostrarOpcoes();
             try {
@@ -27,6 +28,7 @@ public abstract class Menu implements IMenu {
             }
         }
     }
+
 
     protected abstract void mostrarOpcoes();
 
