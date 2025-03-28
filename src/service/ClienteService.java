@@ -19,11 +19,9 @@ public class ClienteService {
     public List<String> listarClientesService() {
         List<String> dadosClientes = new ArrayList<>();
         for (Cliente cliente : clientes) {
-                    dadosClientes.add(cliente.getNome()
-                    + " - "
-                    + cliente.getDocumento()
-                    + " - "
-                    + cliente.getDataNascimento());
+                    dadosClientes.add(cliente.getNome() +
+                    cliente.getDocumento() +
+                    cliente.getDataNascimento());
         }
         return dadosClientes;
     }
