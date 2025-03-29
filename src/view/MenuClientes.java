@@ -62,8 +62,8 @@ public class MenuClientes extends Menu {
 
     private void listarClientes() {
         List<String> clientes = clienteService.listarClientesService();
-
         for (String cliente : clientes) {
+            System.out.println("-------------------");
             System.out.println(cliente);
         }
     }
