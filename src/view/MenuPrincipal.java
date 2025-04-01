@@ -19,7 +19,7 @@ public class MenuPrincipal extends Menu {
     protected void processarOpcao(int opcao) {
         switch (opcao) {
             case 1 -> new MenuClientes().exibirMenu();
-            case 2 -> System.out.println("Criar menu de produtos.");
+            case 2 -> new MenuProduto().exibirMenu();
             case 3 -> System.out.println("Criar menu de vendas.");
             case 4 -> System.out.println("Criar menu de recebimentos.");
             case 0 -> System.out.println("Saindo do sistema...");
