@@ -1,7 +1,6 @@
 package view;
 
 import java.util.Scanner;
-
 import model.Produto;
 import service.ProdutoService;
 
